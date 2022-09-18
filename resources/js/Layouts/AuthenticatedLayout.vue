@@ -13,18 +13,18 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <!-- PAGE CONTAINER -->
-        <div class="min-h-screen bg-gray-100">
+        <div class="h-screen min-w-full">
 
            
             <div class="flex flex-row justify-start">
-               <div class="order-1 flex-1">
+               <div class="order-1 flex-1 bg-gray-50">
                     <!-- HEADER NAVIGATION -->
-                    <nav class="bg-gray-50">
+                    <nav class="bg-gray-100">
                         <slot name="navigation"></slot>
                     </nav>
 
                     <!-- PAGE CONTENT -->
-                    <main class="flex-1 p-4">
+                    <main>
                         <slot name="main"/>
                     </main>
                </div>
