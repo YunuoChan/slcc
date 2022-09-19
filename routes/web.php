@@ -94,4 +94,9 @@ Route::get('/appointments', function() {
     ]);
 })->name('appointments');
 
+Route::get('/home', function () {
+    return Inertia::render('Home');
+})->name('home');
+
+
 require __DIR__.'/auth.php';
