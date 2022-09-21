@@ -4,6 +4,8 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\EmailNotificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,10 @@ Route::get('/appointments', function() {
 Route::get('/home', function () {
     return Inertia::render('Home');
 })->name('home');
+
+
+
+Route::get('/sendmail/{userId}', [EmailNotificationController::class, 'sendEmail']);
 
 
 require __DIR__.'/auth.php';
