@@ -2,8 +2,12 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Nav from '@/Layouts/Nav.vue';
 import Sidebar from '@/Layouts/Sidebar.vue';
+import { ref, computed } from 'vue';
 
 import { Head } from '@inertiajs/inertia-vue3';
+
+const date = ref(new Date());
+
 
 </script>
 
