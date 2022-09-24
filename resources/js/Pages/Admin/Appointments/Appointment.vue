@@ -4,7 +4,7 @@ import Table from '@/Components/Table.vue';
 import Nav from '@/Layouts/Nav.vue';
 import Sidebar from '@/Layouts/Sidebar.vue';
 
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head, useForm } from '@inertiajs/inertia-vue3';
 
 
 const props = defineProps({
@@ -15,6 +15,19 @@ function redirectTo(url) {
     window.location = url;
 }
 
+const form = useForm({
+    _method: 'PUT',
+    id: '',
+    name: '',
+    email: ''
+});
+
+
+function sendEmail(id) {
+    console.log('dito ka');
+    form.id = id;
+    form.post(route('sendEmail'));
+}
 </script>
 
 <template>
@@ -63,7 +76,7 @@ function redirectTo(url) {
                                     {{ appointment.status }}
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
-                                    <button @click="redirectTo('/sendmail/2')" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Send Confirmation</button>
+                                    <button @click="sendEmail(appointment.id)" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Send Confirmation</button>
                                 </td>
                             </tr>
                         </template>

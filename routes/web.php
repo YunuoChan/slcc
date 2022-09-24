@@ -102,7 +102,7 @@ Route::get('/home', function () {
 
 
 
-Route::get('/sendmail/{userId}', [EmailNotificationController::class, 'sendEmail']);
+Route::post('/sendmail', [EmailNotificationController::class, 'sendEmail'])->name('sendEmail');
 
 
 require __DIR__.'/auth.php';

@@ -22,8 +22,9 @@ import { Link } from '@inertiajs/inertia-vue3';
 
             <div>
                 <ul class="flex flex-col gap-3">
+
                     <Link :href="route('dashboard')">
-                        <li class="sidebar-text" :class="route().current() == 'dashboard' ? 'text-blue-500' : ''">
+                        <li class="sidebar-text"  :class="route().current() == 'dashboard' ? 'text-blue-500' : 'text-black'">
                             <span class="text-base font-semibold">Dashboard</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -40,7 +41,7 @@ import { Link } from '@inertiajs/inertia-vue3';
                     </li>
 
                     <Link :href="route('appointments')">
-                        <li class="sidebar-text" :class="route().current() == 'appointments' ? 'text-blue-500' : ''">
+                        <li class="sidebar-text"  :class="route().current() == 'appointments' ? 'text-blue-500' : 'text-black'">
                             <span class="text-base font-semibold">Appointments</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -50,7 +51,7 @@ import { Link } from '@inertiajs/inertia-vue3';
                     </Link>
 
                     <Link :href="route('accounts')">
-                        <li class="sidebar-text" :class="route().current() == 'accounts' ? 'text-blue-500' : ''">
+                        <li class="sidebar-text" :class="route().current() == 'accounts' ? 'text-blue-500' : 'text-black'">
                             <span class="text-base font-semibold">Accounts</span>
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
