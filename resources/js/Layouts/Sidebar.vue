@@ -16,7 +16,7 @@ import { Link } from '@inertiajs/inertia-vue3';
                 </div>
 
                 <div>
-                    <span class=" text-sm font-bold">Hillbert Bansot</span>
+                    <span class=" text-sm font-bold">Edyy</span>
                 </div>
             </div>
 

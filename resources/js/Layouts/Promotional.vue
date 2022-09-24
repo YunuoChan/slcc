@@ -72,7 +72,7 @@ import NavLink from '@/Components/NavLink.vue';
                 </div>
 
                 <div class="col-md-6 gx-5 mb-4">
-                    <h4><strong>Saint Rose of Lima</strong></h4>
+                    <h4><strong>Saint Rose of Lima Catholic</strong></h4>
                     <p class="text-muted">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis consequatur
                     eligendi quisquam doloremque vero ex debitis veritatis placeat unde animi laborum

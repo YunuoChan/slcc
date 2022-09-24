@@ -1,5 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
+import '../css/tailwind.css';
 import '../css/bootstrap.min.css';
 import '../css/fontawesome.min.css';
 
