@@ -18,7 +18,7 @@ use App\Http\Controllers\EmailNotificationController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/laravel', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -30,6 +30,12 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return Inertia::render('Admin/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/home', function () {
+    return Inertia::render('User/Home');
+})->middleware(['auth', 'verified'])->name('home');
+
 
 Route::get('/accounts', function() {
     $data = new Collection([
@@ -96,10 +102,16 @@ Route::get('/appointments', function() {
     ]);
 })->name('appointments');
 
-Route::get('/home', function () {
-    return Inertia::render('Home');
-})->name('home');
 
+
+Route::get('/', function () {
+    return Inertia::render('Landing', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+})->name('landing');
 
 
 Route::get('/sendmail/{userId}', [EmailNotificationController::class, 'sendEmail']);

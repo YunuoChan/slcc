@@ -43,7 +43,7 @@ const showingNavigationDropdown = ref(false);
                         <NavLink>
                             Our Team
                         </NavLink>
-                        <WarningButton>
+                        <WarningButton :href="route('login')" >
                             Sign In
                         </WarningButton>
 
@@ -110,7 +110,7 @@ const showingNavigationDropdown = ref(false);
             </div> -->
 
             <div class="p-4">
-                <WarningButton>
+                <WarningButton :href="route('login')" >
                     Sign In
                 </WarningButton>
             </div>
