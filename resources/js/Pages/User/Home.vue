@@ -1,6 +1,6 @@
 <script setup>
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import Nav from '@/Layouts/Nav.vue';
+import AuthenticatedLayoutUser from '@/Layouts/AuthenticatedLayoutUser.vue';
+import Nav from '@/Layouts/NavUser.vue';
 import Sidebar from '@/Layouts/Sidebar.vue';
 
 import { Head } from '@inertiajs/inertia-vue3';
@@ -10,7 +10,7 @@ import { Head } from '@inertiajs/inertia-vue3';
 <template>
     <Head title="Home | Saint Rose of Lima" />
 
-    <AuthenticatedLayout>
+    <AuthenticatedLayoutUser>
         <!-- Navigation template -->
         <template #navigation>
             <Nav></Nav> 
@@ -21,9 +21,5 @@ import { Head } from '@inertiajs/inertia-vue3';
             <h1>Hello User</h1>
         </template>
 
-        <!-- Sidebar template -->
-        <template #sidebar>
-           <Sidebar></Sidebar> 
-        </template>
-    </AuthenticatedLayout>
+    </AuthenticatedLayoutUser>
 </template>

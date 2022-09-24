@@ -86,6 +86,18 @@ const date = ref(new Date());
                         </span>
                     </div>
                 </div>
+
+                 <v-date-picker v-model="date" class="flex-grow">
+                    <template v-slot="{ inputValue, inputEvents }">
+                    <input
+                        id="date"
+                        class="bg-white text-gray-700 w-full py-2 px-3 appearance-none border rounded-l focus:outline-none"
+                        :class="{ 'border-red-600': errorMessage }"
+                        :value="inputValue"
+                        v-on="inputEvents"
+                    />
+        </template>
+      </v-date-picker>
             </div>
         </template>
 
