@@ -1,7 +1,6 @@
 <script setup>
 import AuthenticatedLayoutUser from '@/Layouts/AuthenticatedLayoutUser.vue';
 import Nav from '@/Layouts/NavUser.vue';
-import Sidebar from '@/Layouts/Sidebar.vue';
 
 import { Head } from '@inertiajs/inertia-vue3';
 

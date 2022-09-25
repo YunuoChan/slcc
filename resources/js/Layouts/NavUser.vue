@@ -41,7 +41,7 @@ const showingNavigationDropdown = ref(false);
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
                         <!-- Settings Dropdown -->
                         <div class="ml-3 relative flex">
-                            <WarningButton>
+                            <WarningButton :href="route('schedule')">
                                 Schedule a Service
                             </WarningButton>
                             <Dropdown align="right" width="48" class="pl-3">

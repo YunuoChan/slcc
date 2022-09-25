@@ -117,4 +117,41 @@ Route::get('/', function () {
 Route::post('/sendmail', [EmailNotificationController::class, 'sendEmail'])->name('sendEmail');
 
 
+
+Route::get('/schedule', function () {
+
+    $data = new Collection([
+        [
+            'id'                => '1', 
+            'from'              => '8:00 AM',
+            'to'                => '9:00 AM',
+            'status'            => 'ACT'
+        ],
+        [
+            'id'                => '2', 
+            'from'              => '10:00 AM',
+            'to'                => '11:00 AM',
+            'status'            => 'ACT'
+        ],
+        [
+            'id'                => '3', 
+            'from'              => '1:00 PM',
+            'to'                => '2:00 PM',
+            'status'            => 'ACT'
+        ],
+        [
+            'id'                => '4', 
+            'from'              => '3:00 PM',
+            'to'                => '4:00 PM',
+            'status'            => 'ACT'
+        ],
+    ]);
+
+    return inertia('User/Schedule', [
+        'slots' =>  $data
+    ]);
+    // return Inertia::render('User/Schedule');
+})->middleware(['auth', 'verified'])->name('schedule');
+
+
 require __DIR__.'/auth.php';
