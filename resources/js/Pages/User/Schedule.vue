@@ -7,10 +7,21 @@
     const date = ref(new Date());
 
     const props = defineProps({
-        'slots': Object
+        slots: Object,
+        church: Object
     });
 
 
+
+</script>
+<script>
+    export default {
+        data() {
+            return {
+            chooseChurch: null,
+            };
+        },
+    };
 </script>
 
 <template>
@@ -58,10 +69,36 @@
                         <!-- TIME -->
                         <div class="pt-4">
                             <label class="block text-gray-600 text-sm font-bold mb-2">Select Time</label>
+
                             <div class="pl-3" v-for="slot in props.slots" :key="slot.id">
-                                <input :id="'slotpicker-'+slot.id" type="radio" :value="slot.id" name="slotpick"/><label class="pl-2" :for="'slotpicker-'+slot.id">{{ slot.from }} - {{ slot.to}}</label>
+                                <input :id="'slotpicker-'+slot.id" type="radio" :value="slot.id" name="slotpick"/><label class="pl-2" :for="'slotpicker-'+slot.id">{{ slot.time_from }} - {{ slot.time_to}}</label>
                             </div>
                         </div>
+
+                        <!-- CHURCH -->
+                        <div>
+                            <label class="block text-gray-600 text-sm font-bold mb-2 mt-3">Select Church</label>
+
+                            <select v-model="chooseChurch">
+                                <option disabled value="">Please select one</option>
+                                <option  v-for="church in props.church" :key="church.id" :value="church.id">{{ church.name }}</option>
+                            </select>
+                            
+                            <div v-for="church in props.church" :key="church.id">
+                                <div v-if="chooseChurch === church.id">
+                                    <div>
+                                        <label class="block text-gray-600 text-sm font-bold mb-2 pt-3">Church Info:</label>
+                                        <p class="pl-2">Address: {{ church.address }}</p>
+                                        <p class="pl-2">Email: {{ church.email }}</p>
+                                        <p class="pl-2">Contact: {{ church.contact_number }}</p>
+                                    </div>
+                                </div>
+                            
+                            </div>  
+                            
+
+                        </div>
+                        
 
                         <!-- EVENT -->
                         <div>

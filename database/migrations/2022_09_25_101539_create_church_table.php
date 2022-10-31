@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('latitude', 100);
             $table->string('contact_number');
             $table->string('email');
+            $table->string('status')->default('ACT');
             $table->timestamps();
         });
     }

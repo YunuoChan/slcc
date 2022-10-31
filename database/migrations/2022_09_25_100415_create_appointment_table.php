@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->string('note');
-            $table->string('status');
+            $table->string('status')->default('ACT');
             $table->timestamps();
         });
     }

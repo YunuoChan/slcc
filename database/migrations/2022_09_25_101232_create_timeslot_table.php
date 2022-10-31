@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('time_from');
             $table->string('time_to');
-            $table->string('status');
+            $table->string('status')->default('ACT');
             $table->timestamps();
         });
     }
